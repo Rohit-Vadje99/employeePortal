@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Blood</th>
+      <th>Age</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users; track user.id) {
+      <tr>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.bloodGroup }}</td>
+        <td>{{ user.age }}</td>
+        <td>
+          <button class="view" [routerLink]="user.id" type="button">
+            View
+          </button>
+        </td>
+        <td>
+          <button class="edit" type="button">Edit</button>
+        </td>
+        <td>
+          <button class="delete" type="button">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+<!-- <router-outlet></router-outlet> -->

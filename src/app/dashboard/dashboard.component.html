@@ -1,0 +1,8 @@
+<p>Welcome to dashboard</p>
+
+<p>Total employees: {{ totalUsers }}</p>
+<p>Total male: {{ genderStats.maleCount }}</p>
+<p>Total female: {{ genderStats.femaleCount }}</p>
+<p>Average age: {{ averageAge | number: "1.1-2" }}</p>
+
+<button type="button" routerLink="../employees">Employee list</button>
