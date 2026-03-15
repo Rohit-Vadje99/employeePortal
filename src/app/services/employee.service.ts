@@ -15,4 +15,12 @@ export class EmployeeService {
   getEmployee(id: string) {
     return this.http.get('https://dummyjson.com/users/' + id);
   }
+
+  addEmployee(employee: any) {
+    return this.http.post('https://dummyjson.com/users/add', employee);
+  }
+
+  editEmployee(id: string, employee: any) {
+    return this.http.patch('https://dummyjson.com/users/' + id, employee);
+  }
 }

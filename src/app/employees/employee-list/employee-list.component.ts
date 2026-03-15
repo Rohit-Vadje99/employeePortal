@@ -5,7 +5,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterLink],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.css',
 })
