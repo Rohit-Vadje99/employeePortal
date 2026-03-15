@@ -1,5 +1,11 @@
 <div class="container">
   <a routerLink="login" routerLinkActive="active">Login</a>
   <a routerLink="dashboard" routerLinkActive="active">Dashboard</a>
-  <a routerLink="employees" routerLinkActive="active">Employees</a>
+  <a
+    routerLink="employees"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Employees</a
+  >
+  <button type="button" (click)="onLogout()">Logout</button>
 </div>

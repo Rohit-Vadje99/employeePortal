@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 
 interface Login {
   username: string;
@@ -11,6 +11,8 @@ interface Login {
   providedIn: 'root',
 })
 export class AuthService {
+  private _accessToken = new BehaviorSubject('');
+  accessToken$ = this._accessToken.asObservable();
   constructor() {}
 
   http = inject(HttpClient);
@@ -23,13 +25,17 @@ export class AuthService {
     return this.http.post('https://dummyjson.com/user/login', emailPass).pipe(
       tap({
         next: (data: any) => {
-          // this.accessToken = data.accessToken;
-          // console.log('login method called in auth service');
+          this._accessToken.next(data.accessToken);
+          console.log('login method called in auth service');
           // console.log(this.accessToken);
           // localStorage.setItem('accessToken', data.accessToken);
           // localStorage.removeItem('accessToken');
         },
       }),
     );
+  }
+
+  logout() {
+    this._accessToken.next('');
   }
 }

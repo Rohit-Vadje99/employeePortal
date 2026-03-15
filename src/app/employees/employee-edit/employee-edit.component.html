@@ -1,0 +1,16 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <label for="">First Name</label>
+  <input formControlName="firstName" />
+  <label for="">Last Name</label>
+  <input formControlName="lastName" />
+  <label for="">Age</label>
+  <input formControlName="age" />
+  <button type="submit">Update</button>
+</form>
+
+@if (user) {
+  <p>{{ user.firstName }} is updated.</p>
+  <p>{{ user.lastName }} is updated.</p>
+  <p>{{ user.age }} is updated.</p>
+  <p>{{ user.email }}</p>
+}

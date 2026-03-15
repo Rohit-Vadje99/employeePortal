@@ -1,0 +1,19 @@
+<form [formGroup]="newEmployee" (ngSubmit)="onSubmit()" class="form-container">
+  <div class="email-container">
+    <label for="firstName">First Name</label>
+    <input id="firstName" formControlName="firstName" />
+  </div>
+  <div class="pass-container">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" formControlName="lastName" />
+  </div>
+  <div class="pass-container">
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" />
+  </div>
+  <div class="pass-container">
+    <label for="age">Age</label>
+    <input id="age" formControlName="age" />
+  </div>
+  <button type="submit">Login</button>
+</form>

@@ -6,7 +6,7 @@ import { JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-employee-details',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: './employee-details.component.html',
   styleUrl: './employee-details.component.css',
 })
