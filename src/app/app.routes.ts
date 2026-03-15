@@ -5,6 +5,8 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
 import { EmployeeDetailsComponent } from './employees/employee-details/employee-details.component';
 import { EmployeeAddComponent } from './employees/employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employees/employee-edit/employee-edit.component';
+import { authGuard } from './guards/auth.guard';
+import { LogoutComponent } from './auth/logout/logout.component';
 
 export const routes: Routes = [
   {
@@ -19,10 +21,12 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'employees',
     component: EmployeeListComponent,
+    canActivate: [authGuard],
     // children: [
     //   {
     //     path: ':id',
@@ -37,9 +41,14 @@ export const routes: Routes = [
   {
     path: 'employees/:id',
     component: EmployeeDetailsComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'employees/edit/:id',
     component: EmployeeEditComponent,
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
   },
 ];

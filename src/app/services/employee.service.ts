@@ -23,4 +23,8 @@ export class EmployeeService {
   editEmployee(id: string, employee: any) {
     return this.http.patch('https://dummyjson.com/users/' + id, employee);
   }
+
+  searchEmployee(name: any) {
+    return this.http.get('https://dummyjson.com/users/search?q=' + name);
+  }
 }
