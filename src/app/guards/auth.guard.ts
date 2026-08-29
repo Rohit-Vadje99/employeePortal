@@ -6,4 +6,5 @@ import { map } from 'rxjs';
 export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   return authService.accessToken$.pipe(map((token) => !!token));
+  // hi demo
 };
