@@ -39,6 +39,6 @@
     "jasmine-core": {
       "version": "5.10.1"
     },
-    "braces": "^3.0.2"
+    "braces": "3.0.2"
   }
 }
