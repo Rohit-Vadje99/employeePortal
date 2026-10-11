@@ -34,5 +34,18 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.5.2"
+  },
+  "overrides": {
+    "files": [
+      "src/test.ts",
+      "src/polyfills.ts"
+    ],
+    "compilerOptions": {
+      "types": [
+        "jasmine",
+        "node"
+      ]
+    },
+    "braces": "3.0.3"
   }
 }
