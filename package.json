@@ -1,6 +1,6 @@
 {
   "name": "employee-portal",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -36,9 +36,19 @@
     "typescript": "~5.5.2"
   },
   "overrides": {
+    "files": [
+      "src/test.ts",
+      "src/polyfills.ts"
+    ],
+    "compilerOptions": {
+      "types": [
+        "jasmine",
+        "node"
+      ]
+    },
+    "braces": "3.0.3",
     "jasmine-core": {
       "version": "5.10.1"
-    },
-    "braces": "3.0.2"
+    }
   }
 }
